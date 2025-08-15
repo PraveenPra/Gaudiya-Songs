@@ -32,13 +32,25 @@
     <header class="song-header">
       <button id="backToResults" class="icon-btn" aria-label="Back">←</button>
       <h2 id="songTitle"></h2>
-      <button id="toggleInternalSearch" class="icon-btn" aria-label="Search in song">🔍</button>
+      <button id="toggleInternalSearch" class="icon-btn hidden" aria-label="Search in song">🔍</button>
     </header>
     <div id="internalSearchContainer" class="hidden">
       <input id="internalSearch" type="search" placeholder="Search in this song…" />
     </div>
     <div class="song-meta" id="songMeta"></div>
     <pre id="songLyrics" class="lyrics"></pre>
+  </section>
+
+  <section id="settingsView" class="hidden settings-view">
+    <header class="settings-header">
+      <button id="backFromSettings" class="icon-btn" aria-label="Back">←</button>
+      <h2>Settings</h2>
+    </header>
+    <div class="settings-item">
+      <label>
+        <input type="checkbox" id="internalSearchToggle"> Enable internal song search
+      </label>
+    </div>
   </section>
 
   <nav class="bottom-nav">

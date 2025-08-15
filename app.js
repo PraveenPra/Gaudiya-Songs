@@ -14,6 +14,9 @@
     "internalSearchContainer"
   );
   const internalSearchEl = document.getElementById("internalSearch");
+  const settingsView = document.getElementById("settingsView");
+  const backFromSettings = document.getElementById("backFromSettings");
+  const internalSearchToggle = document.getElementById("internalSearchToggle");
   const navHome = document.getElementById("navHome");
   const navGlobalSearch = document.getElementById("navGlobalSearch");
   const navSettings = document.getElementById("navSettings");
@@ -69,6 +72,10 @@
     resultsEl.classList.add("hidden");
     songView.classList.remove("hidden");
     internalSearchContainer.classList.add("hidden");
+    toggleInternalSearchBtn.classList.toggle(
+      "hidden",
+      !settings.internalSearchEnabled
+    );
   }
 
   backToResults.addEventListener("click", () => {
@@ -80,7 +87,6 @@
   });
 
   toggleInternalSearchBtn.addEventListener("click", () => {
-    if (!settings.internalSearchEnabled) return;
     internalSearchContainer.classList.toggle("hidden");
     if (!internalSearchContainer.classList.contains("hidden")) {
       internalSearchEl.focus();
@@ -94,17 +100,31 @@
       return;
     }
     const regex = new RegExp(`(${term})`, "gi");
-    songLyrics.innerHTML = currentSong.lyrics.replace(regex, "<mark>$1</mark>");
+    const normLyrics = stripDiacritics(currentSong.lyrics);
+    let highlighted = "";
+    let lastIndex = 0;
+    normLyrics.replace(regex, (match, p1, offset) => {
+      highlighted +=
+        currentSong.lyrics.slice(lastIndex, offset) +
+        "<mark>" +
+        currentSong.lyrics.slice(offset, offset + p1.length) +
+        "</mark>";
+      lastIndex = offset + p1.length;
+    });
+    highlighted += currentSong.lyrics.slice(lastIndex);
+    songLyrics.innerHTML = highlighted;
   });
 
   navHome.addEventListener("click", () => {
     songView.classList.add("hidden");
+    settingsView.classList.add("hidden");
     document.getElementById("mainHeader").classList.remove("hidden");
     resultsEl.classList.remove("hidden");
   });
 
   navGlobalSearch.addEventListener("click", () => {
     songView.classList.add("hidden");
+    settingsView.classList.add("hidden");
     document.getElementById("mainHeader").classList.remove("hidden");
     resultsEl.classList.remove("hidden");
     searchEl.value = "";
@@ -113,13 +133,21 @@
   });
 
   navSettings.addEventListener("click", () => {
-    const enabled = confirm(
-      `Internal song search is currently ${
-        settings.internalSearchEnabled ? "enabled" : "disabled"
-      }.\nToggle it?`
-    );
-    if (enabled)
-      settings.internalSearchEnabled = !settings.internalSearchEnabled;
+    songView.classList.add("hidden");
+    document.getElementById("mainHeader").classList.add("hidden");
+    resultsEl.classList.add("hidden");
+    settingsView.classList.remove("hidden");
+    internalSearchToggle.checked = settings.internalSearchEnabled;
+  });
+
+  backFromSettings.addEventListener("click", () => {
+    settingsView.classList.add("hidden");
+    document.getElementById("mainHeader").classList.remove("hidden");
+    resultsEl.classList.remove("hidden");
+  });
+
+  internalSearchToggle.addEventListener("change", (e) => {
+    settings.internalSearchEnabled = e.target.checked;
   });
 
   function liveSearch(q) {
