@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Categories — Songs</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/categories.css" />
   </head>
   <body>
     <header>
@@ -22,16 +22,26 @@
 
       async function init() {
         await loadSongs();
-        console.log(
-          "Songs loaded:",
-          Object.keys(categoryIndex).length,
-          "categories"
-        );
-        console.log("Categories loaded:", categoryIndex);
         const categoriesList = document.getElementById("categories-list");
-        Object.keys(categoryIndex)
-          .sort()
-          .forEach((cat) => {
+
+        // Separate main types
+        const mainCats = {};
+        Object.keys(categoryIndex).forEach((cat) => {
+          if (cat.startsWith("author:")) {
+            if (!mainCats.author) mainCats.author = [];
+            mainCats.author.push(cat.replace("author:", ""));
+          } else if (cat.startsWith("deity:")) {
+            if (!mainCats.deity) mainCats.deity = [];
+            mainCats.deity.push(cat.replace("deity:", ""));
+          } else {
+            if (!mainCats.other) mainCats.other = [];
+            mainCats.other.push(cat);
+          }
+        });
+
+        // Render other categories
+        if (mainCats.other) {
+          mainCats.other.sort().forEach((cat) => {
             const li = document.createElement("li");
             const a = document.createElement("a");
             a.href = `category.html?cat=${encodeURIComponent(cat)}`;
@@ -39,8 +49,79 @@
             li.appendChild(a);
             categoriesList.appendChild(li);
           });
-      }
+        }
 
+        // Render Authors as sticky accordion
+        if (mainCats.author) {
+          const li = document.createElement("li");
+          li.classList.add("accordion");
+          const header = document.createElement("span");
+          header.textContent = "Authors ▼";
+          header.classList.add("accordion-header");
+          li.appendChild(header);
+
+          const ul = document.createElement("ul");
+          ul.classList.add("accordion-content");
+          ul.style.display = "none";
+          ul.style.maxHeight = "200px"; // scroll height
+          ul.style.overflowY = "auto";
+
+          mainCats.author.sort().forEach((auth) => {
+            const subLi = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `category.html?cat=${encodeURIComponent(
+              "author:" + auth
+            )}`;
+            a.textContent = auth;
+            subLi.appendChild(a);
+            ul.appendChild(subLi);
+          });
+
+          li.appendChild(ul);
+          categoriesList.appendChild(li);
+
+          // Accordion toggle
+          header.addEventListener("click", () => {
+            const isVisible = ul.style.display === "block";
+            ul.style.display = isVisible ? "none" : "block";
+          });
+        }
+
+        // Render Deities similarly if needed
+        if (mainCats.deity) {
+          const li = document.createElement("li");
+          li.classList.add("accordion");
+          const header = document.createElement("span");
+          header.textContent = "Deities ▼";
+          header.classList.add("accordion-header");
+          li.appendChild(header);
+
+          const ul = document.createElement("ul");
+          ul.classList.add("accordion-content");
+          ul.style.display = "none";
+          ul.style.maxHeight = "200px";
+          ul.style.overflowY = "auto";
+
+          mainCats.deity.sort().forEach((deity) => {
+            const subLi = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `category.html?cat=${encodeURIComponent(
+              "deity:" + deity
+            )}`;
+            a.textContent = deity;
+            subLi.appendChild(a);
+            ul.appendChild(subLi);
+          });
+
+          li.appendChild(ul);
+          categoriesList.appendChild(li);
+
+          header.addEventListener("click", () => {
+            const isVisible = ul.style.display === "block";
+            ul.style.display = isVisible ? "none" : "block";
+          });
+        }
+      }
       init();
     </script>
   </body>

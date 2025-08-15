@@ -88,7 +88,7 @@
       "title": "Akordha Paramananda Nityananda Ray",
       "author": "Locana Dasa Thakura",
       "book": "Caitanya Mangala",
-      "categories": ["nityananda"],
+      "categories": ["deity:nityananda"],
       "verses": [
         {
           "n": 1,
@@ -147,7 +147,7 @@
       "title": "Sri Guru Carana Padma",
       "author": "Narottama Dasa Thakura",
       "book": "Prema Bhakti Candrika",
-      "categories": ["guru", "aarati"],
+      "categories": ["deity:guru", "aarati"],
       "verses": [
         {
           "n": 1,
@@ -276,7 +276,7 @@
       "title": "Pranesvara Nivedana Ei Jana Kore",
       "author": "Narottama Dasa Thakura",
       "book": "Prarthana",
-      "categories": ["krsna"],
+      "categories": ["deity:krsna"],
       "verses": [
         {
           "n": 1,
@@ -332,7 +332,7 @@
       "title": "Namamisvaram Saccidananda Rupam",
       "author": "Vyasadeva",
       "book": "Padma Purana",
-      "categories": ["astakams", "krsna", "aarati"],
+      "categories": ["astakams", "deity:krsna", "aarati"],
       "verses": [
         {
           "n": 1,

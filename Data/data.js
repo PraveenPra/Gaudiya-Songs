@@ -12,12 +12,32 @@ async function loadSongs() {
 
 function buildCategoryIndex() {
   categoryIndex = {};
+
   songs.forEach((song) => {
-    if (!song.categories) return;
-    song.categories.forEach((cat) => {
-      if (!categoryIndex[cat]) categoryIndex[cat] = [];
-      categoryIndex[cat].push(song);
-    });
+    // 1. Other categories
+    if (song.categories) {
+      song.categories.forEach((cat) => {
+        if (!categoryIndex[cat]) categoryIndex[cat] = [];
+        categoryIndex[cat].push(song);
+      });
+    }
+
+    // 2. Author
+    const author = song.author?.trim();
+    if (author) {
+      const key = `author:${author}`;
+      if (!categoryIndex[key]) categoryIndex[key] = [];
+      categoryIndex[key].push(song);
+    }
+
+    // 3. Deity (put in categories directly with prefix)
+    if (song.deity) {
+      song.deity.forEach((deity) => {
+        const key = `deity:${deity}`;
+        if (!categoryIndex[key]) categoryIndex[key] = [];
+        categoryIndex[key].push(song);
+      });
+    }
   });
 }
 
