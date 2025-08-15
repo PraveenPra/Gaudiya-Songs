@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     try {
-      const resp = await fetch("/songs.json", { cache: "no-store" });
+      const resp = await fetch("songs.json", { cache: "no-store" });
       const json = await resp.json();
       const indexed = buildIndex(json.songs || []);
       const found = indexed.find((s) => s.id === id);

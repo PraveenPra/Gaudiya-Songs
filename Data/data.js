@@ -3,7 +3,7 @@ let songs = [];
 let categoryIndex = {};
 
 async function loadSongs() {
-  const res = await fetch("../songs.json", { cache: "no-store" });
+  const res = await fetch("songs.json", { cache: "no-store" });
   songs = await res.json().then((data) => data.songs);
   console.log("Loaded songs:", songs.length);
   buildCategoryIndex();
