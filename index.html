@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <header class="app-header">
+  <header class="app-header" id="mainHeader">
     <div class="brand">
       <img src="/favicon.svg" alt="Lotus" class="logo" />
       <h1>Gaudiya Songs</h1>
@@ -28,14 +28,15 @@
     </article>
   </template>
 
-  <dialog id="songModal" class="modal">
-    <div class="modal-content">
-      <button id="closeModal" class="close" aria-label="Close">✕</button>
-      <h2 id="modalTitle"></h2>
-      <div id="modalMeta" class="meta"></div>
-      <pre id="modalLyrics" class="lyrics"></pre>
-    </div>
-  </dialog>
+  <section id="songView" class="song-view hidden">
+    <header class="song-header">
+      <button id="backToResults" class="icon-btn" aria-label="Back">←</button>
+      <h2 id="songTitle"></h2>
+      <button id="openSearch" class="icon-btn" aria-label="Search">🔍</button>
+    </header>
+    <div class="song-meta" id="songMeta"></div>
+    <pre id="songLyrics" class="lyrics"></pre>
+  </section>
 
   <script src="/db.js" defer></script>
   <script src="/app.js" defer></script>

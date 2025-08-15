@@ -138,3 +138,36 @@ mark {
     justify-self: end;
   }
 }
+
+.hidden {
+  display: none;
+}
+.song-view {
+  padding: 1rem;
+}
+.song-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+.song-header h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-size: 1rem;
+}
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--fg);
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.song-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0;
+}

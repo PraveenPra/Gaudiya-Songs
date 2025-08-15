@@ -3,22 +3,21 @@
   const resultsEl = document.getElementById("results");
   const searchEl = document.getElementById("search");
   const tpl = document.getElementById("result-item");
-  const modal = document.getElementById("songModal");
-  const closeModalBtn = document.getElementById("closeModal");
-  const modalTitle = document.getElementById("modalTitle");
-  const modalMeta = document.getElementById("modalMeta");
-  const modalLyrics = document.getElementById("modalLyrics");
+  const songView = document.getElementById("songView");
+  const songTitle = document.getElementById("songTitle");
+  const songMeta = document.getElementById("songMeta");
+  const songLyrics = document.getElementById("songLyrics");
+  const backToResults = document.getElementById("backToResults");
 
-  let SONGS = []; // in-memory
+  let SONGS = [];
+  let lastQuery = "";
 
-  // Register SW
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("/sw.js");
     });
   }
 
-  // Utils
   const stripDiacritics = (s) =>
     s
       .normalize("NFD")
@@ -39,11 +38,7 @@
     if (idx === -1) return original.slice(0, Math.min(120, original.length));
     const start = Math.max(0, idx - pad);
     const end = Math.min(normText.length, idx + normQuery.length + pad);
-    // Map the slice indices directly to original since we removed combining marks consistently
     const snippet = original.slice(start, end);
-    const before = stripDiacritics(original.slice(start, idx));
-    const match = original.slice(idx, idx + normQuery.length);
-    // Highlight by re-searching inside snippet to avoid diacritic-length quirks
     const re = new RegExp(
       normQuery.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"),
       "i"
@@ -78,27 +73,33 @@
         item.normText,
         item._normQ
       );
-      node.addEventListener("click", () => openModal(item));
+      node.addEventListener("click", () => openSong(item));
       frag.appendChild(node);
     }
     resultsEl.appendChild(frag);
   }
 
-  function openModal(item) {
-    modalTitle.textContent = item.title;
-    modalMeta.textContent = `${item.author || "Unknown"}${
+  function openSong(item) {
+    songTitle.textContent = item.title;
+    songMeta.textContent = `${item.author || "Unknown"}${
       item.source ? " • " + item.source : ""
     }`;
-    modalLyrics.textContent = item.lyrics;
-    modal.showModal();
+    songLyrics.textContent = item.lyrics;
+    document.getElementById("mainHeader").classList.add("hidden");
+    resultsEl.classList.add("hidden");
+    songView.classList.remove("hidden");
   }
 
-  closeModalBtn.addEventListener("click", () => modal.close());
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) modal.close();
+  backToResults.addEventListener("click", () => {
+    songView.classList.add("hidden");
+    document.getElementById("mainHeader").classList.remove("hidden");
+    resultsEl.classList.remove("hidden");
+    searchEl.value = lastQuery;
+    liveSearch(lastQuery);
   });
 
   function liveSearch(q) {
+    lastQuery = q;
     const normQ = stripDiacritics(q.trim());
     if (!normQ) {
       renderResults([]);
@@ -139,7 +140,6 @@
       await saveSongsToIndexedDB(json.songs);
       await DB.setMeta("songs_version", version);
     } else {
-      // ensure store populated at least once
       const count = (await DB.getAll(DB.STORE_SONGS)).length;
       if (!count) {
         await saveSongsToIndexedDB(json.songs);
