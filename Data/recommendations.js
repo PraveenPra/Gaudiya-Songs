@@ -55,24 +55,29 @@ export function getRecommendedSongs(maxCount = 10) {
   // 1️⃣ Occasion-based recommendations
   const occ = getActiveOccasion();
   if (occ) {
-    if (occ.categories) {
-      occ.categories.forEach((cat) => {
-        (categoryIndex[cat] || [])
-          .sort((a, b) => a.title.localeCompare(b.title))
-          .forEach((s) => {
-            if (!addedIds.has(s.id) && recSongs.length < maxCount) {
-              recSongs.push(s);
-              addedIds.add(s.id);
-            }
-          });
-      });
+    // Categories
+    if (Array.isArray(occ.categories)) {
+      occ.categories
+        .filter((cat) => cat) // skip empty
+        .forEach((cat) => {
+          (categoryIndex[cat] || [])
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .forEach((s) => {
+              if (!addedIds.has(s.id) && recSongs.length < maxCount) {
+                recSongs.push(s);
+                addedIds.add(s.id);
+              }
+            });
+        });
     }
-    if (occ.songs) {
+
+    // Songs by ID
+    if (Array.isArray(occ.songs)) {
       occ.songs.forEach((id) => {
         const song = songs.find((s) => s.id === id);
         if (song && !addedIds.has(song.id) && recSongs.length < maxCount) {
           recSongs.push(song);
-          addedIds.add(s.id);
+          addedIds.add(song.id);
         }
       });
     }

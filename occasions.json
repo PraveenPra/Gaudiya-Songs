@@ -2,15 +2,15 @@
   "occasions": [
     {
       "name": "janmastami",
-      "start_date": "2025-08-12",
-      "end_date": "2025-08-12",
+      "start_date": "2025-08-15",
+      "end_date": "2025-08-15",
       "categories": ["deity:krsna"],
       "songs": []
     },
     {
       "name": "karthik",
-      "start_date": "2025-08-15",
-      "end_date": "2025-08-15",
+      "start_date": "2025-09-11",
+      "end_date": "2025-09-29",
       "categories": [],
       "songs": ["namamisvaram-saccidananda-rupam"]
     }
@@ -20,7 +20,7 @@
       "categories": ["aarati:mangalarati"]
     },
     "night": {
-      "categories": ["deity:krsna"]
+      "categories": ["deity:krisna"]
     }
   }
 }
