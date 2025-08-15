@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       node.querySelector(".snippet").innerHTML = snippet;
       node.addEventListener("click", () => {
-        location.href = "/song.html?id=" + encodeURIComponent(item.id);
+        location.href = "song.html?id=" + encodeURIComponent(item.id);
       });
       node.addEventListener("keydown", (ev) => {
         if (ev.key === "Enter" || ev.key === " ")
-          location.href = "/song.html?id=" + encodeURIComponent(item.id);
+          location.href = "song.html?id=" + encodeURIComponent(item.id);
       });
       frag.appendChild(node);
     }
