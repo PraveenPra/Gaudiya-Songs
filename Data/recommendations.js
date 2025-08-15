@@ -116,21 +116,44 @@ export function getRecommendedSongs(maxCount = 10) {
 
 // recSongsByType = { occasion: [...], time: [...], recent: [...] }
 export function displayRecommendedSongs(recSongsByType) {
+  const container = document.getElementById("recommendations");
+  container.innerHTML = ""; // clear previous content
+
+  // Only display if there are songs
   Object.entries(recSongsByType).forEach(([type, songs]) => {
-    const container = document.getElementById(`rec-${type}`);
-    if (!container) return;
+    if (!songs.length) return;
 
-    const listEl = container.querySelector("ul");
-    listEl.innerHTML = ""; // clear previous content
+    // Create a wrapper box
+    const box = document.createElement("div");
+    box.className = `rec-box rec-${type}`;
 
+    // Label / heading
+    const label = document.createElement("div");
+    label.className = "rec-label";
+    if (type === "occasion") {
+      // Show actual occasion name dynamically
+      label.textContent = getActiveOccasion()?.name || "Occasion";
+    } else if (type === "time") {
+      label.textContent = "Time-of-Day";
+    } else if (type === "recent") {
+      label.textContent = "Recently Viewed";
+    }
+    box.appendChild(label);
+
+    // Songs list
+    const ul = document.createElement("ul");
+    ul.className = "songs-list";
     songs.forEach((song) => {
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.href = `song.html?id=${encodeURIComponent(song.id)}`;
       a.textContent = song.title;
       li.appendChild(a);
-      listEl.appendChild(li);
+      ul.appendChild(li);
     });
+
+    box.appendChild(ul);
+    container.appendChild(box);
   });
 }
 
