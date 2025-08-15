@@ -34,6 +34,17 @@
       </article>
     </template>
 
+    <section>
+      <h2>Recommended Songs</h2>
+      <ul id="recommended-list" class="songs-list"></ul>
+    </section>
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae
+      cupiditate, assumenda in fugiat neque blanditiis itaque! Voluptatum fugit
+      excepturi illum ad adipisci id sint maxime ratione harum, sapiente quaerat
+      error.
+    </p>
     <nav class="bottom-nav" aria-label="Primary">
       <button id="navHome" aria-label="Home">🏠</button>
       <button id="navGlobalSearch" aria-label="Search">🔍</button>
@@ -44,5 +55,32 @@
     <script src="./js/theme.js" defer></script>
     <script src="./js/utils.js" defer></script>
     <script src="./js/app.js" type="module"></script>
+    <script type="module">
+      import { loadSongs } from "./Data/data.js";
+      import {
+        loadOccasions,
+        getRecommendedSongs,
+        markSongViewed,
+      } from "./Data/recommendations.js";
+
+      async function init() {
+        await loadSongs();
+        await loadOccasions();
+
+        const recSongs = getRecommendedSongs(10);
+        const listEl = document.getElementById("recommended-list");
+
+        recSongs.forEach((song) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `song.html?id=${encodeURIComponent(song.id)}`;
+          a.textContent = song.title;
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+      }
+
+      init();
+    </script>
   </body>
 </html>
