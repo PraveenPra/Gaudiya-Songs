@@ -76,6 +76,16 @@
     });
   }
 
+  async function getById(storeName, id) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction([storeName], "readonly");
+      const req = tx.objectStore(storeName).get(id);
+      req.onsuccess = () => resolve(req.result || null);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
   window.DB = {
     openDB,
     putAll,
@@ -83,6 +93,7 @@
     getAll,
     getMeta,
     setMeta,
+    getById,
     STORE_SONGS,
     STORE_META,
   };

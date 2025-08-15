@@ -257,3 +257,28 @@ mark {
     justify-self: end;
   }
 }
+
+.song-content {
+  padding-bottom: 4rem; /* match nav height */
+}
+
+.update-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0f172a;
+  color: #fff;
+  padding: 0.5em 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+.update-banner button {
+  background: #38bdf8;
+  border: none;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  cursor: pointer;
+}
