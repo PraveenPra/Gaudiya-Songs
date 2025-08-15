@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
   navSettings &&
     navSettings.addEventListener(
       "click",
-      () => (location.href = "/settings.html")
+      () => (location.href = "../settings.html")
     );
 
   toggleInternalSearchBtn.addEventListener("click", () => {
