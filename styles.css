@@ -201,8 +201,6 @@ body.has-bottom-nav {
 .verse-num {
   font-variant-numeric: tabular-nums;
   background: var(--input-bg);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
   padding: 0 0.4rem;
 }
 .verse-text p,

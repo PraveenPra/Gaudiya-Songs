@@ -126,24 +126,6 @@ window.GSUtils = (function () {
       book.textContent = song.book;
       container.appendChild(book);
     }
-
-    song.verses.forEach((v) => {
-      const verseBlock = document.createElement("div");
-      verseBlock.classList.add("verse");
-
-      const text = document.createElement("p");
-      text.innerHTML = v.text.join("<br>");
-      verseBlock.appendChild(text);
-
-      if (v.translation) {
-        const trans = document.createElement("p");
-        trans.classList.add("translation");
-        trans.innerHTML = "<em>" + v.translation.join("<br>") + "</em>";
-        verseBlock.appendChild(trans);
-      }
-
-      container.appendChild(verseBlock);
-    });
   }
 
   return {
@@ -151,6 +133,5 @@ window.GSUtils = (function () {
     highlightDiacriticInsensitive,
     buildIndex,
     makeSnippetFromLines,
-    renderSong,
   };
 })();
