@@ -113,3 +113,81 @@ export function getRecommendedSongs(maxCount = 10) {
 
   return recSongs;
 }
+
+// recSongsByType = { occasion: [...], time: [...], recent: [...] }
+export function displayRecommendedSongs(recSongsByType) {
+  Object.entries(recSongsByType).forEach(([type, songs]) => {
+    const container = document.getElementById(`rec-${type}`);
+    if (!container) return;
+
+    const listEl = container.querySelector("ul");
+    listEl.innerHTML = ""; // clear previous content
+
+    songs.forEach((song) => {
+      const li = document.createElement("li");
+      const a = document.createElement("a");
+      a.href = `song.html?id=${encodeURIComponent(song.id)}`;
+      a.textContent = song.title;
+      li.appendChild(a);
+      listEl.appendChild(li);
+    });
+  });
+}
+
+export function getRecommendedSongsStructured(maxCount = 10) {
+  const recByType = { occasion: [], time: [], recent: [] };
+  const addedIds = new Set();
+
+  // Occasion
+  const occ = getActiveOccasion();
+  if (occ) {
+    if (Array.isArray(occ.categories)) {
+      occ.categories.forEach((cat) => {
+        (categoryIndex[cat] || []).forEach((s) => {
+          if (!addedIds.has(s.id) && recByType.occasion.length < maxCount) {
+            recByType.occasion.push(s);
+            addedIds.add(s.id);
+          }
+        });
+      });
+    }
+    if (Array.isArray(occ.songs)) {
+      occ.songs.forEach((id) => {
+        const song = songs.find((s) => s.id === id);
+        if (
+          song &&
+          !addedIds.has(song.id) &&
+          recByType.occasion.length < maxCount
+        ) {
+          recByType.occasion.push(song);
+          addedIds.add(song.id);
+        }
+      });
+    }
+  }
+
+  // Time-of-day
+  const timeKey = getTimeKey();
+  if (timeKey && occasions.time_based[timeKey]) {
+    const tData = occasions.time_based[timeKey];
+    tData.categories.forEach((cat) => {
+      (categoryIndex[cat] || []).forEach((s) => {
+        if (!addedIds.has(s.id) && recByType.time.length < maxCount) {
+          recByType.time.push(s);
+          addedIds.add(s.id);
+        }
+      });
+    });
+  }
+
+  // Recently viewed
+  recentlyViewed.forEach((id) => {
+    const song = songs.find((s) => s.id === id);
+    if (song && !addedIds.has(song.id) && recByType.recent.length < maxCount) {
+      recByType.recent.push(song);
+      addedIds.add(song.id);
+    }
+  });
+
+  return recByType;
+}
