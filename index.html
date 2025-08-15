@@ -32,12 +32,20 @@
     <header class="song-header">
       <button id="backToResults" class="icon-btn" aria-label="Back">←</button>
       <h2 id="songTitle"></h2>
-      <button id="openSearch" class="icon-btn" aria-label="Search">🔍</button>
+      <button id="toggleInternalSearch" class="icon-btn" aria-label="Search in song">🔍</button>
     </header>
+    <div id="internalSearchContainer" class="hidden">
+      <input id="internalSearch" type="search" placeholder="Search in this song…" />
+    </div>
     <div class="song-meta" id="songMeta"></div>
-    <input id="songSearch" class="hidden" type="search" placeholder="Search in song…" aria-label="Search in song" autocomplete="off" />
     <pre id="songLyrics" class="lyrics"></pre>
   </section>
+
+  <nav class="bottom-nav">
+    <button id="navHome">🏠</button>
+    <button id="navGlobalSearch">🔍</button>
+    <button id="navSettings">⚙️</button>
+  </nav>
 
   <script src="/db.js" defer></script>
   <script src="/app.js" defer></script>

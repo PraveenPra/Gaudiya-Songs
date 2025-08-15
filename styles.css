@@ -170,10 +170,20 @@ mark {
   color: var(--muted);
   margin: 0.5rem 0;
 }
-#songSearch {
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 0.4rem;
-  border: 1px solid var(--hair);
-  border-radius: 4px;
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  background: var(--bg);
+  border-top: 1px solid var(--hair);
+  padding: 0.5rem 0;
+}
+.bottom-nav button {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
