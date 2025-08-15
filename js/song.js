@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // register SW
   if ("serviceWorker" in navigator)
     window.addEventListener("load", () =>
-      navigator.serviceWorker.register("/sw.js").catch(() => {})
+      navigator.serviceWorker.register("sw.js").catch(() => {})
     );
 
   (async function init() {

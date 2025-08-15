@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // register service worker (safe to call multiple times across pages)
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () =>
-      navigator.serviceWorker.register("/sw.js").catch(() => {})
+      navigator.serviceWorker.register("sw.js").catch(() => {})
     );
   }
 
