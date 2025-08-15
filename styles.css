@@ -1,11 +1,57 @@
+/* =========================
+   Theme Variables
+========================= */
+
+/* Default: dark theme */
 :root {
-  --bg: #0b1020;
-  --fg: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #22c55e;
-  --card: #111827;
-  --hair: #1f2937;
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --header-bg: #1e293b;
+  --link-color: #38bdf8;
+  --border-color: #334155;
+  --card-bg: #1e293b;
+  --input-bg: #1e293b;
+  --input-text: #f8fafc;
+  --input-border: #475569;
+  --nav-bg: #1e293b;
+  --nav-icon: #f8fafc;
 }
+
+/* Light theme */
+:root[data-theme="light"] {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --header-bg: #e2e8f0;
+  --link-color: #0369a1;
+  --border-color: #cbd5e1;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-text: #0f172a;
+  --input-border: #94a3b8;
+  --nav-bg: #e2e8f0;
+  --nav-icon: #0f172a;
+}
+
+/* System preference overrides */
+@media (prefers-color-scheme: light) {
+  :root[data-theme="system"] {
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --header-bg: #e2e8f0;
+    --link-color: #0369a1;
+    --border-color: #cbd5e1;
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --input-text: #0f172a;
+    --input-border: #94a3b8;
+    --nav-bg: #e2e8f0;
+    --nav-icon: #0f172a;
+  }
+}
+
+/* =========================
+   Main Styles
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -17,8 +63,8 @@ body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu,
     Helvetica, Arial, sans-serif;
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 body.has-bottom-nav {
   padding-bottom: 64px;
@@ -35,13 +81,8 @@ body.has-bottom-nav {
   grid-template-columns: 1fr;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--hair);
-  background: linear-gradient(
-    180deg,
-    rgba(11, 16, 32, 0.95),
-    rgba(11, 16, 32, 0.8) 60%,
-    rgba(11, 16, 32, 0.6)
-  );
+  border-bottom: 1px solid var(--border-color);
+  background: var(--header-bg);
   backdrop-filter: saturate(1.2) blur(8px);
 }
 .brand {
@@ -62,13 +103,13 @@ body.has-bottom-nav {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 14px;
-  border: 1px solid var(--hair);
-  background: #0a0f1e;
-  color: var(--fg);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
   outline: none;
 }
 #search::placeholder {
-  color: var(--muted);
+  color: var(--border-color);
 }
 
 .results {
@@ -77,8 +118,8 @@ body.has-bottom-nav {
   gap: 0.75rem;
 }
 .result {
-  background: var(--card);
-  border: 1px solid var(--hair);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 0.9rem;
 }
@@ -88,7 +129,7 @@ body.has-bottom-nav {
 }
 .result .meta {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--border-color);
   margin-bottom: 0.35rem;
 }
 .result .snippet {
@@ -105,7 +146,7 @@ body.has-bottom-nav {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid var(--hair);
+  border-bottom: 1px solid var(--border-color);
 }
 .song-header h2 {
   flex: 1;
@@ -116,22 +157,22 @@ body.has-bottom-nav {
 .icon-btn {
   background: none;
   border: none;
-  color: var(--fg);
+  color: var(--text-color);
   font-size: 1.2rem;
   cursor: pointer;
 }
 .song-meta {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--border-color);
   margin: 0.5rem 0 1rem;
 }
 #internalSearch {
   width: 100%;
   padding: 0.55rem 0.75rem;
   border-radius: 10px;
-  border: 1px solid var(--hair);
-  background: #0a0f1e;
-  color: var(--fg);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
 }
 
 .song-content {
@@ -140,12 +181,12 @@ body.has-bottom-nav {
 }
 .section-label {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--border-color);
   margin: 0.25rem 0;
 }
 .verse {
-  background: var(--card);
-  border: 1px solid var(--hair);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 14px;
   padding: 0.75rem 0.9rem;
 }
@@ -154,13 +195,13 @@ body.has-bottom-nav {
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.35rem;
-  color: var(--muted);
+  color: var(--border-color);
   font-size: 0.85rem;
 }
 .verse-num {
   font-variant-numeric: tabular-nums;
-  background: #0a0f1e;
-  border: 1px solid var(--hair);
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 0 0.4rem;
 }
@@ -171,12 +212,12 @@ body.has-bottom-nav {
 }
 .translation {
   margin-top: 0.5rem;
-  color: #e8f6ee;
+  color: var(--link-color);
 }
 .translation .label {
   display: inline-block;
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--border-color);
   margin-bottom: 0.25rem;
 }
 
@@ -187,8 +228,8 @@ body.has-bottom-nav {
   right: 0;
   display: flex;
   justify-content: space-around;
-  background: var(--bg);
-  border-top: 1px solid var(--hair);
+  background: var(--nav-bg);
+  border-top: 1px solid var(--border-color);
   padding: 0.5rem 0;
   z-index: 30;
 }
@@ -197,7 +238,7 @@ body.has-bottom-nav {
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
-  color: var(--fg);
+  color: var(--nav-icon);
 }
 
 .settings-view {
@@ -209,7 +250,7 @@ body.has-bottom-nav {
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid var(--hair);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 0.75rem;
 }
 .settings-header h2 {
@@ -219,8 +260,8 @@ body.has-bottom-nav {
   font-size: 1rem;
 }
 .settings-group {
-  background: var(--card);
-  border: 1px solid var(--hair);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 0.85rem;
   margin: 0.85rem 0;
@@ -267,8 +308,8 @@ mark {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #0f172a;
-  color: #fff;
+  background: var(--header-bg);
+  color: var(--text-color);
   padding: 0.5em 1em;
   display: flex;
   justify-content: space-between;
@@ -276,7 +317,7 @@ mark {
   z-index: 9999;
 }
 .update-banner button {
-  background: #38bdf8;
+  background: var(--link-color);
   border: none;
   padding: 0.4em 0.8em;
   border-radius: 4px;

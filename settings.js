@@ -1,5 +1,8 @@
 // settings.js
+import { initTheme } from "./theme.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   const defaultSettings = {
     internalSearchEnabled: true,
     showTranslations: true,

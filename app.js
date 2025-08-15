@@ -1,5 +1,9 @@
 // app.js — search page
+import { initTheme } from "./theme.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
+
   const resultsEl = document.getElementById("results");
   const searchEl = document.getElementById("search");
   const tpl = document.getElementById("result-item");

@@ -1,40 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gaudiya Songs – Search</title>
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body class="has-bottom-nav">
-  <header class="app-header">
-    <div class="brand">
-      <img src="/favicon.svg" alt="Lotus" class="logo" />
-      <h1>Gaudiya Songs</h1>
-    </div>
-    <input id="search" type="search" placeholder="Search songs… (diacritics optional)" aria-label="Search songs" autocomplete="off" />
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gaudiya Songs – Search</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="has-bottom-nav">
+    <header class="app-header">
+      <div class="brand">
+        <img src="/favicon.svg" alt="Lotus" class="logo" />
+        <h1>Gaudiya Songs</h1>
+      </div>
+      <input
+        id="search"
+        type="search"
+        placeholder="Search songs… (diacritics optional)"
+        aria-label="Search songs"
+        autocomplete="off"
+      />
+    </header>
 
-  <main id="results" class="results" aria-live="polite"></main>
+    <main id="results" class="results" aria-live="polite"></main>
 
-  <template id="result-item">
-    <article class="result" role="button" tabindex="0">
-      <h2 class="title"></h2>
-      <div class="meta"></div>
-      <p class="snippet"></p>
-    </article>
-  </template>
+    <template id="result-item">
+      <article class="result" role="button" tabindex="0">
+        <h2 class="title"></h2>
+        <div class="meta"></div>
+        <p class="snippet"></p>
+      </article>
+    </template>
 
-  <nav class="bottom-nav" aria-label="Primary">
-    <button id="navHome" aria-label="Home">🏠</button>
-    <button id="navGlobalSearch" aria-label="Search">🔍</button>
-    <button id="navSettings" aria-label="Settings">⚙️</button>
-  </nav>
+    <nav class="bottom-nav" aria-label="Primary">
+      <button id="navHome" aria-label="Home">🏠</button>
+      <button id="navGlobalSearch" aria-label="Search">🔍</button>
+      <button id="navSettings" aria-label="Settings">⚙️</button>
+    </nav>
 
-  <script src="/utils.js" defer></script>
-  <script src="/app.js" defer></script>
-</body>
+    <script src="/utils.js" defer></script>
+    <script src="/app.js" type="module"></script>
+  </body>
 </html>

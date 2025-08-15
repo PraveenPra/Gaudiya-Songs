@@ -1,5 +1,8 @@
 // song.js
+import { initTheme } from "./theme.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
   const params = new URLSearchParams(location.search);
   const id = params.get("id");
   const songTitleEl = document.getElementById("songTitle");

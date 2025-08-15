@@ -1,57 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Song — Gaudiya Songs</title>
-  <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="theme-color" content="#0f172a" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body class="has-bottom-nav">
-  <section class="song-view song-page">
-    <header class="song-header">
-      <button id="back" class="icon-btn" aria-label="Back">←</button>
-      <h2 id="songTitle">Loading…</h2>
-      <button id="toggleInternalSearch" class="icon-btn" aria-label="Search in song">🔍</button>
-    </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Song — Gaudiya Songs</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="has-bottom-nav">
+    <section class="song-view song-page">
+      <header class="song-header">
+        <button id="back" class="icon-btn" aria-label="Back">←</button>
+        <h2 id="songTitle">Loading…</h2>
+        <button
+          id="toggleInternalSearch"
+          class="icon-btn"
+          aria-label="Search in song"
+        >
+          🔍
+        </button>
+      </header>
 
-    <div id="internalSearchContainer" class="hidden">
-      <input id="internalSearch" type="search" placeholder="Search in this song… (diacritics optional)" />
-    </div>
+      <div id="internalSearchContainer" class="hidden">
+        <input
+          id="internalSearch"
+          type="search"
+          placeholder="Search in this song… (diacritics optional)"
+        />
+      </div>
 
-    <div class="song-meta" id="songMeta"></div>
-    <div id="songContent" class="song-content" role="document"></div>
-  </section>
+      <div class="song-meta" id="songMeta"></div>
+      <div id="songContent" class="song-content" role="document"></div>
+    </section>
 
-  <div id="song-container" style="padding: 1rem;"></div>
+    <div id="song-container" style="padding: 1rem"></div>
 
-  <script src="db.js"></script>
-  <script src="utils.js"></script>
-  <script>
-    (async function() {
-      const params = new URLSearchParams(window.location.search);
-      const songId = params.get("id");
+    <script src="db.js"></script>
+    <script src="utils.js"></script>
+    <script>
+      (async function () {
+        const params = new URLSearchParams(window.location.search);
+        const songId = params.get("id");
 
-      if (!songId) {
-        document.getElementById("song-container").innerHTML = "<p>No song ID provided.</p>";
-        return;
-      }
+        if (!songId) {
+          document.getElementById("song-container").innerHTML =
+            "<p>No song ID provided.</p>";
+          return;
+        }
 
-      await DB.openDB();
-      const song = await DB.getById(DB.STORE_SONGS, songId);
-      renderSong(song);
-    })();
-  </script>
-  
-  <nav class="bottom-nav" aria-label="Primary">
-    <button id="navHome">🏠</button>
-    <button id="navSearch">🔍</button>
-    <button id="navSettings">⚙️</button>
-  </nav>
+        await DB.openDB();
+        const song = await DB.getById(DB.STORE_SONGS, songId);
+        renderSong(song);
+      })();
+    </script>
 
-  <script src="/utils.js" defer></script>
-  <script src="/song.js" defer></script>
-</body>
+    <nav class="bottom-nav" aria-label="Primary">
+      <button id="navHome">🏠</button>
+      <button id="navSearch">🔍</button>
+      <button id="navSettings">⚙️</button>
+    </nav>
+
+    <script src="/utils.js" defer></script>
+    <script src="/song.js" type="module"></script>
+  </body>
 </html>
