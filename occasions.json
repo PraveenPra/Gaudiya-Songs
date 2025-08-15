@@ -9,7 +9,7 @@
     },
     {
       "name": "karthik",
-      "start_date": "2025-09-11",
+      "start_date": "2025-08-11",
       "end_date": "2025-09-29",
       "categories": [],
       "songs": ["namamisvaram-saccidananda-rupam"]
@@ -17,10 +17,10 @@
   ],
   "time_based": {
     "morning": {
-      "categories": ["aarati:mangalarati"]
+      "categories": ["aarati:morning"]
     },
     "night": {
-      "categories": ["deity:krisna"]
+      "categories": ["aarati:night"]
     }
   }
 }

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderResults(items) {
     resultsEl.innerHTML = "";
     if (!items || !items.length) {
-      resultsEl.innerHTML = '<p class="empty">No matches.</p>';
+      // resultsEl.innerHTML = '<p class="empty">No matches.</p>';
       return;
     }
     const normQ = stripDiacritics(lastQuery.trim());

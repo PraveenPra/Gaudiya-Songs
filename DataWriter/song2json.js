@@ -64,11 +64,14 @@ function parseSong(raw) {
     }
   }
 
+  let categories = [];
+
   return {
     id: generateId(title),
     title,
     author,
     book,
+    categories,
     verses,
   };
 }

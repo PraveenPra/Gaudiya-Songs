@@ -69,6 +69,13 @@ body {
 body.has-bottom-nav {
   padding-bottom: 64px;
 }
+
+iframe {
+  width: 100%; /* full width */
+  border: 0; /* remove default border */
+  display: block; /* avoid inline spacing issues */
+  height: -webkit-fill-available;
+}
 .hidden {
   display: none;
 }
