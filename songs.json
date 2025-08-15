@@ -3,27 +3,270 @@
   "songs": [
     {
       "id": "emona-durmati",
-      "title": "Emona durmati saṁsāra bhitare",
-      "author": "Bhaktivinoda Ṭhākura",
-      "raga": "Unknown",
-      "source": "Kalyāṇa-kalpataru",
-      "lyrics": "Emona durmati saṁsāra bhitare, pāinu āmi viṣaya-sukhete\nBhūli' tomāre, karaṇa āmāra, pāinu duḥkhera prabāhe\nTomā vinā ke āche āmāra, dayāla Nanda-tanaya?\nKṛpā kari' more, nistāra more, loho nija-pada-chāyā"
+      "title": "Emona Durmati",
+      "author": "Bhaktivinoda Thakura",
+      "book": "Saranagati",
+      "verses": [
+        {
+          "n": 1,
+          "note": "prabhu he!",
+          "text": [
+            "emona durmati, saṁsāra bhitore,",
+            "poḍiyā āchinu āmi",
+            "tava nija-jana, kono mahājane,",
+            "pāṭhāiyā dile tumi"
+          ],
+          "translation": [
+            "Oh Lord! Such a wicked mind has brought me into this world, but one of Your pure and elevated devotees has come to bring me out of it."
+          ]
+        },
+        {
+          "n": 2,
+          "text": [
+            "doyā kori’ more, patita dekhiyā,",
+            "kohilo āmāre giyā",
+            "ohe dīna-jana, śuno bhālo kathā,",
+            "ullasita ha’be hiyā"
+          ],
+          "translation": [
+            "He saw me so fallen and wretched, took pity, and came to me saying, ‘O humbled soul, please listen to this good tiding, for it will gladden your heart.’"
+          ]
+        },
+        {
+          "n": 3,
+          "text": [
+            "tomāre tārite, śrī-kṛṣṇa-caitanya,",
+            "navadvīpe avatār",
+            "tomā heno koto, dīna hīna jane,",
+            "korilena bhava-pār"
+          ],
+          "translation": [
+            "Sri Krsna Caitanya has appeared in the land of Navadvipa to deliver you. He has safely conducted many miserable souls such as you across the sea of worldly existence."
+          ]
+        },
+        {
+          "n": 4,
+          "text": [
+            "vedera pratijñā, rākhibāra tare,",
+            "rukma-varṇa vipra-suta",
+            "mahāprabhu nāme, nadīyā mātāya,",
+            "saṅge bhāi avadhūta"
+          ],
+          "translation": [
+            "To fulfill the promise of the Vedas, the son of a brāhmaṇa bearing the name Mahāprabhu of golden complexion, has descended with His brother the avadhūta Nityānanda. Together They have overwhelmed all of Nadia with divine ecstasy."
+          ]
+        },
+        {
+          "n": 5,
+          "text": [
+            "nanda-suta jini, caitanya gosāi,",
+            "nija-nāma kori’ dān",
+            "tārilo jagat, tumi-o jāiyā,",
+            "loho nija-paritrāṇ"
+          ],
+          "translation": [
+            "Sri Caitanya, who is Krishna Himself, the son of Nanda, has saved the world by freely distributing His own holy name. Go also and receive your deliverance."
+          ]
+        },
+        {
+          "n": 6,
+          "text": [
+            "se kathā śuniyā, āsiyāchi, nātha!",
+            "tomāra caraṇa-tale",
+            "bhaktivinoda, kāṅdiyā kāṅdiyā,",
+            "āpana-kāhinī bole"
+          ],
+          "translation": [
+            "O Lord, hearing those words, Bhaktivinoda has come weeping to the soles of Your lotus feet and tells the story of his life."
+          ]
+        }
+      ]
     },
     {
-      "id": "sri-rupa-manjari-pada",
-      "title": "Śrī Rūpa Mañjarī Pada",
-      "author": "Narottama Dāsa Ṭhākura",
-      "raga": "Unknown",
-      "source": "Prārthanā",
-      "lyrics": "Śrī Rūpa Mañjarī pada, sei mora sampada\nsei mora bhajana-pūjana\nsei mora prāṇa-dhana, sei mora ābharaṇa\nsei mora jīvana-jīvana"
+      "id": "akordha-paramananda-nityananda-ray-locana",
+      "title": "Akordha Paramananda Nityananda Ray",
+      "author": "Locana Dasa Thakura",
+      "book": "Caitanya Mangala",
+      "verses": [
+        {
+          "n": 1,
+          "text": [
+            "akrodha paramānanda nityānanda rāya",
+            "abhimāna śūnya nitāi nagare beḍāya"
+          ],
+          "translation": [
+            "The noble Lord Nityananda is never angry, for He is the personification of supreme transcendental bliss. Devoid of any concept of false ego, Nitai wanders about the town."
+          ]
+        },
+        {
+          "n": 2,
+          "text": [
+            "adhama patita jīvera dvāre dvāre giyā",
+            "harināma mahā-mantra dicchena bilāiyā"
+          ],
+          "translation": [
+            "Going from door to door in the residences of the most fallen and wretched souls, He freely distributes the gift of the Hari-nama mahamantra."
+          ]
+        },
+        {
+          "n": 3,
+          "text": [
+            "jā’re dekhe tā’re kahe dante tṛṇa dhari’",
+            "‘āmāre kiniyā laha bala gaurahari’"
+          ],
+          "translation": [
+            "He exclaims to whomever he sees while holding straw between his teeth, “Please purchase me by worshipping Gaurahari!”"
+          ]
+        },
+        {
+          "n": 4,
+          "text": [
+            "eta bali’ nityānanda bhūme gaḍi’ jāya",
+            "sonāra parvata jena dhūlāte loṭāya"
+          ],
+          "translation": [
+            "Saying thus, Nityananda Prabhu rolls about on the ground, appearing like a golden mountain tumbling in the dust."
+          ]
+        },
+        {
+          "n": 5,
+          "text": [
+            "hena avatāre jā’ra rati nā janmila",
+            "locana bale sei pāpī ela āra gela"
+          ],
+          "translation": [
+            "Locana Dasa Thakura says, “Whoever has not experienced the awakening of affection for such an avatara as this, that sinful person simply comes and goes uselessly in the cycle of repeated birth and death.”"
+          ]
+        }
+      ]
     },
     {
-      "id": "bhaja-bhakata-vatsala",
-      "title": "Bhaja Bhakata Vatsala Śrī Gaurahari",
-      "author": "Bhaktivinoda Ṭhākura",
-      "raga": "Unknown",
-      "source": "Gīta-mālā",
-      "lyrics": "Bhaja bhakata vatsala śrī-gaurahari\nśrī-gaurahari, gaurahari\nBhaja bhakata vatsala śrī-gaurahari\nHare Kṛṣṇa Hare Kṛṣṇa Kṛṣṇa Kṛṣṇa Hare Hare\nHare Rāma Hare Rāma Rāma Rāma Hare Hare"
+      "id": "sri-guru-carana-padma-narottama",
+      "title": "Sri Guru Carana Padma",
+      "author": "Narottama Dasa Thakura",
+      "book": "Prema Bhakti Candrika",
+      "verses": [
+        {
+          "n": 1,
+          "text": [
+            "śrī-guru-caraṇa-padma, kevala-bhakati-sadma,",
+            "bando muñi sāvadhāna mate",
+            "jāhāra prasāde bhāi, e bhava toriyā jāi,",
+            "kṛṣṇa-prāpti hoy jāhā ha'te"
+          ],
+          "translation": [
+            "The lotus feet of our spiritual master are the only way by which we can attain pure devotional service. I bow to his lotus feet with great awe and reverence. By his grace one can cross the ocean of material suffering and obtain the mercy of Krsna."
+          ]
+        },
+        {
+          "n": 2,
+          "text": [
+            "guru-mukha-padma-vākya, cittete koribo aikya,",
+            "ār nā koriho mane āśā",
+            "śrī-guru-caraṇe rati, ei se uttama-gati,",
+            "je prasāde pūre sarva āśā"
+          ],
+          "translation": [
+            "My only wish is to have my consciousness purified by the words emanating from his lotus mouth. Attachment to his lotus feet is the perfection that fulfills all desires."
+          ]
+        },
+        {
+          "n": 3,
+          "text": [
+            "cakṣu-dān dilo jei, janme janme prabhu sei,",
+            "divya jñān hṛde prokāśito",
+            "prema-bhakti jāhā hoite, avidyā vināśa jāte,",
+            "vede gāy jāhāra carito"
+          ],
+          "translation": [
+            "He opens my darkened eyes and fills my heart with transcendental knowledge. He is my Lord birth after birth. From him ecstatic prema emanates; by him ignorance is destroyed. The Vedic scriptures sing of his character."
+          ]
+        },
+        {
+          "n": 4,
+          "text": [
+            "śrī-guru karuṇā-sindhu, adhama janāra bandhu,",
+            "lokanāth lokera jīvana",
+            "hā hā prabhu koro doyā, deho more pada-chāyā,",
+            "ebe jaśa ghuṣuk tribhuvana"
+          ],
+          "translation": [
+            "Our spiritual master is the ocean of mercy, the friend of the poor, and the lord and master of the devotees. O Lokanatha Goswami! O master! Be merciful unto me. Give me the shade of your lotus feet. Your fame is spread all over the three worlds."
+          ]
+        },
+        {
+          "n": 5,
+          "text": [
+            "vaiṣṇava caraṇa reṇu, bhūṣaṇa koriyā tanu,",
+            "yāhā hoite anubhava hoy",
+            "mārjana hoy bhajana, sādhu sańge anukṣaṇa,",
+            "ajñāna avidyā parājaya"
+          ],
+          "translation": [
+            "By making the dust of the Vaisnavas' feet the ornament of my body, ecstatic love comes.  Washing the Vaisnavas' lotus feet is my method of worship.  By always associating with the Vaisnavas, I shall overcome the darkness of ignorance."
+          ]
+        },
+        {
+          "n": 6,
+          "text": [
+            "jaya sanātana rūpa, prema bhakti rasa kūpa",
+            "yugala ujjvalamaya tanu",
+            "yāhāra prasāde loka, pāsarilo sab śoka,",
+            "prakaṭa kalapa taru janu"
+          ],
+          "translation": [
+            "O Srila Sanatana Gosvami and Srila Rupa Gosvami, who are two deep wells of the nectar of pure love, two personifications of the splendid nectar of the Divine Couple, and two desire trees by whose mercy the entire world is free from suffering, all glories to you!"
+          ]
+        },
+        {
+          "n": 7,
+          "text": [
+            "prema bhakti rīti yoto, nija granthe suvekata",
+            "likhiyāchen dui mahāśaya",
+            "yāhāra śravaṇa hoite, premānande bhāse cite,",
+            "yugala madhura rasāśraya"
+          ],
+          "translation": [
+            "In your books, you two great souls clearly described prema-bhakti.  You are reservoirs of the sweet nectar of the Divine Couple.  Hearing about you brings bliss to the heart. Their sweet mellows are my shelter."
+          ]
+        },
+        {
+          "n": 8,
+          "text": [
+            "yugala kiśora prema, lakṣa bāṇa yeno hema",
+            "heno dhana prakāśilo yārā",
+            "jaya rūpa sanātana, deho more prema dhana",
+            "se ratana more gole hārā"
+          ],
+          "translation": [
+            "You are fabulously wealthy, possessing ecstatic love for the youthful Divine Couple, a love more precious than gold purified in ten thousand flames.  O Rupa and Sanatana Gosvami, all glories to you!  I beg you, please give me in charity some of these jewel necklaces."
+          ]
+        },
+        {
+          "n": 9,
+          "text": [
+            "bhāgavata śāstra marma, nava vidhā bhakti dharma,",
+            "sadāi koribo susevana",
+            "anya devāśraya nāi, tomāre kohilo bhāi,",
+            "ei bhakti parama bhajana"
+          ],
+          "translation": [
+            "I shall eternally engage in the nine-fold process of devotional service, which is the essential message of Srimad-Bhagavatam, and I shall not worship the demigods.  O brother, I say to you: Devotional service is the most exalted kind of worship."
+          ]
+        },
+        {
+          "n": 10,
+          "text": [
+            "sādhu śāstra guru vākya, hṛdoye koriyā aikya,",
+            "satata bhāsibo prema mājhe",
+            "karmī jñānī bhakti hīna, ihāke koribo bhina,",
+            "narottama ei tattva gāje"
+          ],
+          "translation": [
+            "Making the words of the guru, sadhus and sastras one with my heart, I constantly float and swim in the ocean of pure love.  I am different from the karmis and jnanis, who have no devotion for Krsna.  Narottama speaks the truth."
+          ]
+        }
+      ]
     }
   ]
 }

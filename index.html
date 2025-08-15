@@ -9,7 +9,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
+<body class="has-bottom-nav">
   <header class="app-header" id="mainHeader">
     <div class="brand">
       <img src="/favicon.svg" alt="Lotus" class="logo" />
@@ -28,38 +28,55 @@
     </article>
   </template>
 
-  <section id="songView" class="song-view hidden">
+  <section id="songView" class="song-view hidden" aria-labelledby="songTitle">
     <header class="song-header">
       <button id="backToResults" class="icon-btn" aria-label="Back">←</button>
       <h2 id="songTitle"></h2>
       <button id="toggleInternalSearch" class="icon-btn hidden" aria-label="Search in song">🔍</button>
     </header>
+
     <div id="internalSearchContainer" class="hidden">
-      <input id="internalSearch" type="search" placeholder="Search in this song…" />
+      <input id="internalSearch" type="search" placeholder="Search in this song… (diacritics optional)" aria-label="Search in song" />
     </div>
+
     <div class="song-meta" id="songMeta"></div>
-    <pre id="songLyrics" class="lyrics"></pre>
+    <div id="songContent" class="song-content" role="document"></div>
   </section>
 
-  <section id="settingsView" class="hidden settings-view">
+  <section id="settingsView" class="hidden settings-view" aria-labelledby="settingsTitle">
     <header class="settings-header">
       <button id="backFromSettings" class="icon-btn" aria-label="Back">←</button>
-      <h2>Settings</h2>
+      <h2 id="settingsTitle">Settings</h2>
     </header>
-    <div class="settings-item">
-      <label>
-        <input type="checkbox" id="internalSearchToggle"> Enable internal song search
+
+    <div class="settings-group">
+      <h3>Song Display</h3>
+      <label class="switch-row">
+        <input type="checkbox" id="showTranslationsToggle" checked>
+        <span>Show translations</span>
+      </label>
+      <fieldset class="radio-group" id="translationLayoutGroup">
+        <legend>Translation layout</legend>
+        <label><input type="radio" name="translationLayout" value="grouped" checked> Verses first, then all translations</label>
+        <label><input type="radio" name="translationLayout" value="inline"> Translation after each verse</label>
+      </fieldset>
+    </div>
+
+    <div class="settings-group">
+      <h3>Features</h3>
+      <label class="switch-row">
+        <input type="checkbox" id="internalSearchToggle" checked>
+        <span>Enable internal song search</span>
       </label>
     </div>
   </section>
 
-  <nav class="bottom-nav">
-    <button id="navHome">🏠</button>
-    <button id="navGlobalSearch">🔍</button>
-    <button id="navSettings">⚙️</button>
+  <nav class="bottom-nav" aria-label="Primary">
+    <button id="navHome" aria-label="Home">🏠</button>
+    <button id="navGlobalSearch" aria-label="Search">🔍</button>
+    <button id="navSettings" aria-label="Settings">⚙️</button>
   </nav>
 
-  <script src="/db.js" defer></script>
   <script src="/app.js" defer></script>
 </body>
 </html>
