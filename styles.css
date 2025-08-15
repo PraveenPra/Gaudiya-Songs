@@ -1,0 +1,140 @@
+:root {
+  --bg: #0b1020;
+  --fg: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+  --card: #111827;
+  --hair: #1f2937;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu,
+    Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--hair);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 16, 32, 0.95),
+    rgba(11, 16, 32, 0.8) 60%,
+    rgba(11, 16, 32, 0.6)
+  );
+  backdrop-filter: saturate(1.2) blur(8px);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.logo {
+  width: 28px;
+  height: 28px;
+}
+.app-header h1 {
+  font-size: 1.05rem;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+#search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--hair);
+  background: #0a0f1e;
+  color: var(--fg);
+  outline: none;
+}
+#search::placeholder {
+  color: var(--muted);
+}
+.results {
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.result {
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 16px;
+  padding: 0.9rem;
+}
+.result .title {
+  font-size: 1rem;
+  margin: 0.1rem 0 0.25rem;
+}
+.result .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+.result .snippet {
+  margin: 0.25rem 0 0.1rem;
+  line-height: 1.45;
+}
+mark {
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  padding: 0 0.12rem;
+  border-radius: 4px;
+}
+.modal {
+  border: 0;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+}
+.modal .modal-content {
+  max-width: 720px;
+  width: 92vw;
+  margin: 6vh auto;
+  background: var(--card);
+  border: 1px solid var(--hair);
+  border-radius: 16px;
+  padding: 1rem 1rem 1.25rem;
+}
+.modal .close {
+  float: right;
+  border: 1px solid var(--hair);
+  background: #0b1224;
+  color: var(--fg);
+  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+.lyrics {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  margin-top: 0.25rem;
+}
+@media (min-width: 720px) {
+  .app-header {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  .app-header h1 {
+    font-size: 1.1rem;
+  }
+  #search {
+    max-width: 560px;
+    justify-self: end;
+  }
+}

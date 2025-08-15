@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gaudiya Songs – Offline Search</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <img src="/favicon.svg" alt="Lotus" class="logo" />
+      <h1>Gaudiya Songs</h1>
+    </div>
+    <input id="search" type="search" placeholder="Search songs… (diacritics optional)" aria-label="Search songs" autocomplete="off" />
+  </header>
+
+  <main id="results" class="results" aria-live="polite"></main>
+
+  <template id="result-item">
+    <article class="result">
+      <h2 class="title"></h2>
+      <div class="meta"></div>
+      <p class="snippet"></p>
+    </article>
+  </template>
+
+  <dialog id="songModal" class="modal">
+    <div class="modal-content">
+      <button id="closeModal" class="close" aria-label="Close">✕</button>
+      <h2 id="modalTitle"></h2>
+      <div id="modalMeta" class="meta"></div>
+      <pre id="modalLyrics" class="lyrics"></pre>
+    </div>
+  </dialog>
+
+  <script src="/db.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

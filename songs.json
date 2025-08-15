@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "songs": [
+    {
+      "id": "emona-durmati",
+      "title": "Emona durmati saṁsāra bhitare",
+      "author": "Bhaktivinoda Ṭhākura",
+      "raga": "Unknown",
+      "source": "Kalyāṇa-kalpataru",
+      "lyrics": "Emona durmati saṁsāra bhitare, pāinu āmi viṣaya-sukhete\nBhūli' tomāre, karaṇa āmāra, pāinu duḥkhera prabāhe\nTomā vinā ke āche āmāra, dayāla Nanda-tanaya?\nKṛpā kari' more, nistāra more, loho nija-pada-chāyā"
+    },
+    {
+      "id": "sri-rupa-manjari-pada",
+      "title": "Śrī Rūpa Mañjarī Pada",
+      "author": "Narottama Dāsa Ṭhākura",
+      "raga": "Unknown",
+      "source": "Prārthanā",
+      "lyrics": "Śrī Rūpa Mañjarī pada, sei mora sampada\nsei mora bhajana-pūjana\nsei mora prāṇa-dhana, sei mora ābharaṇa\nsei mora jīvana-jīvana"
+    },
+    {
+      "id": "bhaja-bhakata-vatsala",
+      "title": "Bhaja Bhakata Vatsala Śrī Gaurahari",
+      "author": "Bhaktivinoda Ṭhākura",
+      "raga": "Unknown",
+      "source": "Gīta-mālā",
+      "lyrics": "Bhaja bhakata vatsala śrī-gaurahari\nśrī-gaurahari, gaurahari\nBhaja bhakata vatsala śrī-gaurahari\nHare Kṛṣṇa Hare Kṛṣṇa Kṛṣṇa Kṛṣṇa Hare Hare\nHare Rāma Hare Rāma Rāma Rāma Hare Hare"
+    }
+  ]
+}
