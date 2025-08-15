@@ -5,7 +5,7 @@ let recentlyViewed = []; // in-memory only, resets on reload
 
 // Load the occasions rules
 export async function loadOccasions() {
-  const res = await fetch("../occasions.json", { cache: "no-store" });
+  const res = await fetch("occasions.json", { cache: "no-store" });
   occasions = await res.json();
 }
 

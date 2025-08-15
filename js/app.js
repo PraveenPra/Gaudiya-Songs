@@ -81,10 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderResults([]);
   });
   document.getElementById("navCategories").addEventListener("click", () => {
-    location.href = "/categories.html";
+    location.href = "categories.html";
   });
   document.getElementById("navSettings").addEventListener("click", () => {
-    location.href = "../settings.html";
+    location.href = "settings.html";
   });
 
   // register service worker (safe to call multiple times across pages)
