@@ -128,10 +128,21 @@ window.GSUtils = (function () {
     }
   }
 
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function getQueryParam(param) {
+    return new URLSearchParams(window.location.search).get(param);
+  }
+
   return {
     stripDiacritics,
     highlightDiacriticInsensitive,
     buildIndex,
     makeSnippetFromLines,
+    capitalize,
+    renderSong,
+    getQueryParam,
   };
 })();

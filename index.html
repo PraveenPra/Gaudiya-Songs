@@ -7,7 +7,7 @@
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#0f172a" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="has-bottom-nav">
     <header class="app-header">
@@ -37,10 +37,12 @@
     <nav class="bottom-nav" aria-label="Primary">
       <button id="navHome" aria-label="Home">🏠</button>
       <button id="navGlobalSearch" aria-label="Search">🔍</button>
+      <button id="navCategories" aria-label="Categories">📚</button>
       <button id="navSettings" aria-label="Settings">⚙️</button>
     </nav>
 
-    <script src="/utils.js" defer></script>
-    <script src="/app.js" type="module"></script>
+    <script src="./js/theme.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+    <script src="./js/app.js" type="module"></script>
   </body>
 </html>

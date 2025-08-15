@@ -6,6 +6,7 @@
       "title": "Emona Durmati",
       "author": "Bhaktivinoda Thakura",
       "book": "Saranagati",
+      "categories": [],
       "verses": [
         {
           "n": 1,
@@ -87,6 +88,7 @@
       "title": "Akordha Paramananda Nityananda Ray",
       "author": "Locana Dasa Thakura",
       "book": "Caitanya Mangala",
+      "categories": ["nityananda"],
       "verses": [
         {
           "n": 1,
@@ -145,6 +147,7 @@
       "title": "Sri Guru Carana Padma",
       "author": "Narottama Dasa Thakura",
       "book": "Prema Bhakti Candrika",
+      "categories": ["guru", "aarati"],
       "verses": [
         {
           "n": 1,
@@ -273,6 +276,7 @@
       "title": "Pranesvara Nivedana Ei Jana Kore",
       "author": "Narottama Dasa Thakura",
       "book": "Prarthana",
+      "categories": ["krsna"],
       "verses": [
         {
           "n": 1,
@@ -328,6 +332,7 @@
       "title": "Namamisvaram Saccidananda Rupam",
       "author": "Vyasadeva",
       "book": "Padma Purana",
+      "categories": ["astakams", "krsna", "aarati"],
       "verses": [
         {
           "n": 1,

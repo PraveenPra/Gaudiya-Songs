@@ -1,9 +1,9 @@
-export function applyTheme(theme) {
+function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
 }
 
-export function initTheme() {
+function initTheme() {
   const saved = localStorage.getItem("theme") || "dark";
   applyTheme(saved);
 
@@ -14,3 +14,7 @@ export function initTheme() {
     });
   });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  initTheme();
+});

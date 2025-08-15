@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Songs by Category</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="category-title"></h1>
+    </header>
+    <main>
+      <ul id="songs-list" class="songs-list"></ul>
+    </main>
+
+    <script src="./js/theme.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+    <script type="module">
+      import { loadSongs, categoryIndex } from "./Data/data.js";
+
+      async function init() {
+        await loadSongs();
+
+        const category = window.GSUtils.getQueryParam("cat");
+        const songsInCategory = categoryIndex[category] || [];
+
+        document.getElementById("category-title").textContent =
+          window.GSUtils.capitalize(category);
+
+        const listEl = document.getElementById("songs-list");
+        songsInCategory.forEach((song) => {
+          const li = document.createElement("li");
+          const a = document.createElement("a");
+          a.href = `song.html?id=${encodeURIComponent(song.id)}`;
+          a.textContent = song.title;
+          li.appendChild(a);
+          listEl.appendChild(li);
+        });
+
+        if (songsInCategory.length === 0) {
+          listEl.innerHTML = "<li>No songs found in this category.</li>";
+        }
+      }
+
+      init();
+    </script>
+  </body>
+</html>

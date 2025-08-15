@@ -1,9 +1,5 @@
 // app.js — search page
-import { initTheme } from "./theme.js";
-
 document.addEventListener("DOMContentLoaded", () => {
-  initTheme();
-
   const resultsEl = document.getElementById("results");
   const searchEl = document.getElementById("search");
   const tpl = document.getElementById("result-item");
@@ -83,6 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
     searchEl.value = "";
     searchEl.focus();
     renderResults([]);
+  });
+  document.getElementById("navCategories").addEventListener("click", () => {
+    location.href = "/categories.html";
   });
   document.getElementById("navSettings").addEventListener("click", () => {
     location.href = "/settings.html";

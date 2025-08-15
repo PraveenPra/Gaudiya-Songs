@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories — Songs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Categories</h1>
+    </header>
+    <main>
+      <ul id="categories-list" class="category-list"></ul>
+    </main>
+
+    <script src="./js/theme.js" defer></script>
+    <script src="./js/utils.js" defer></script>
+    <script type="module">
+      //   import { capitalize } from "./js/utils.js";
+      import { loadSongs, categoryIndex } from "./Data/data.js";
+
+      async function init() {
+        await loadSongs();
+        console.log(
+          "Songs loaded:",
+          Object.keys(categoryIndex).length,
+          "categories"
+        );
+        console.log("Categories loaded:", categoryIndex);
+        const categoriesList = document.getElementById("categories-list");
+        Object.keys(categoryIndex)
+          .sort()
+          .forEach((cat) => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = `category.html?cat=${encodeURIComponent(cat)}`;
+            a.textContent = window.GSUtils.capitalize(cat);
+            li.appendChild(a);
+            categoriesList.appendChild(li);
+          });
+      }
+
+      init();
+    </script>
+  </body>
+</html>
