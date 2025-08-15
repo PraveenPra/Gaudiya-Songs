@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // init — load songs.json, build index
   (async function init() {
     try {
-      const resp = await fetch("../songs.json", { cache: "no-store" });
+      const resp = await fetch("songs.json", { cache: "no-store" });
       const json = await resp.json();
       SONGS = buildIndex(json.songs || []);
       renderResults([]); // empty initial state
